@@ -5,8 +5,13 @@ on:
    branches:
     - main
     - 'feature/*'   
-         
-#This is Job Sestion
+# Define Environment Variables and Secrets
+env:
+  MONGO_URI: 'mongodb+srv://supercluster.d83jj.mongodb.net/superData'
+  MONGO_USERNAME: ${{vars.MONGO_USERNAME}}
+  MONGO_PASSWORD: ${{secrets.MONGO_PASSWORD}}   
+
+            # This is Job Sestion
 jobs:
   unit-testing:
     name: Unit testing
